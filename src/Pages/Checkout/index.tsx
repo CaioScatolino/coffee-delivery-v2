@@ -1,3 +1,12 @@
+import { Order } from './Order'
+import { Selected } from './Selected'
+import { CheckoutContainer } from './styles'
+
 export function Checkout() {
-  return <h1>Checkout</h1>
+  return (
+    <CheckoutContainer>
+      <Order />
+      <Selected />
+    </CheckoutContainer>
+  )
 }

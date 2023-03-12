@@ -1,3 +1,4 @@
+import { Buy } from './Components/Buy'
 import { CoffeeCardContainer, Description, Tag, Tags } from './styles'
 
 interface CoffeeCardProps {
@@ -27,7 +28,7 @@ export function CoffeeCard({
       </Tags>
       <h3>{name}</h3>
       <Description>{description}</Description>
-      {/* <Buy id={id} price={price} /> */}
+      <Buy id={id} price={price} />
     </CoffeeCardContainer>
   )
 }

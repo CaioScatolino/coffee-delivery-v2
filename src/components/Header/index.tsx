@@ -1,9 +1,13 @@
 import { MapPin, ShoppingCart } from 'phosphor-react'
+import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import LogoCoffeeDelivery from '../../assets/LogoCoffeeDelivery.svg'
+import { OrderContext } from '../../contexts/OrderContext'
 import { HeaderContainer, LocationInput } from './styles'
 
 export function Header() {
+  const { cart } = useContext(OrderContext)
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0)
   return (
     <HeaderContainer>
       <span>
@@ -23,7 +27,7 @@ export function Header() {
         </datalist>
 
         <NavLink to="/checkout" title="Checkout">
-          {/* {cart.length !== 0 ? <span>{totalItems}</span> : ''} */}
+          {cart.length !== 0 ? <span>{totalItems}</span> : ''}
           <ShoppingCart size={20} weight="fill" />
         </NavLink>
       </nav>

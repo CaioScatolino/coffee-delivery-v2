@@ -1,3 +1,4 @@
+import { Action } from '../../../../../../../../components/Action'
 import { BuyContainer } from './styles'
 
 interface BuyProps {
@@ -10,6 +11,7 @@ export function Buy({ id, price }: BuyProps) {
     <BuyContainer>
       <p>R$</p>
       <span>{price.toFixed(2)}</span>
+      <Action id={id} actionType={'buy'} />
     </BuyContainer>
   )
 }
