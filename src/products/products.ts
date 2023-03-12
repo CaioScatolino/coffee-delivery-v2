@@ -1,6 +1,6 @@
 import { images } from './images'
 
-import { Coffee } from '../contexts/OrderContext'
+import { Coffee } from '../reducers/reducer'
 
 export const coffees: Coffee[] = [
   {
