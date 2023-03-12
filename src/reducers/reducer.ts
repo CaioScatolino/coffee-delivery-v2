@@ -20,7 +20,7 @@ export interface OrderState {
   // adress?: DeliveryInfo
 }
 
-export function orderReducer(state: OrderState, action: any): OrderState {
+export function orderReducer(state: OrderState, action: any): any {
   switch (action.type) {
     case ActionTypes.UPDATE_CART:
       {
