@@ -65,4 +65,5 @@ export const PurchaseButton = styled.button`
   font-size: 0.875rem;
   height: 3rem;
   border-radius: 8px;
+  cursor: pointer;
 `

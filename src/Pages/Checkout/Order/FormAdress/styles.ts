@@ -47,6 +47,10 @@ export const InputNumber = styled(Input)`
 `
 export const InputComplement = styled(Input)`
   grid-area: inputComplement;
+
+  :focus + span {
+    display: none;
+  }
 `
 export const InputNeighborhood = styled(Input)`
   grid-area: inputNeighborhood;
