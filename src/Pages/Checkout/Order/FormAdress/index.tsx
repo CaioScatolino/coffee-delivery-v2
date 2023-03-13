@@ -19,7 +19,7 @@ import { useForm, FormProvider } from 'react-hook-form'
 const newAdressFormsValidationSchema = zod.object({
   postcode: zod.string().min(1, 'Inform PostCode'),
   street: zod.string().min(1, 'Inform the Street'),
-  number: zod.number().min(1, 'Inform the street number'),
+  number: zod.string().min(1, 'Inform the street number'),
   complement: zod.string(),
   neighborhood: zod.string().min(1, 'Inform the neighborhood'),
   city: zod.string().min(1, 'Inform the city'),
@@ -41,6 +41,7 @@ export function FormAdress() {
     console.log(data)
     createNewAdress(data)
     reset()
+    console.log(data)
   }
 
   return (

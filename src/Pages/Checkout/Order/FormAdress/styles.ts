@@ -19,6 +19,7 @@ export const FormAdressContainer = styled.div`
   background-color: ${(props) => props.theme['base-card']};
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  padding: 1rem 0;
 
   span {
     position: relative;
