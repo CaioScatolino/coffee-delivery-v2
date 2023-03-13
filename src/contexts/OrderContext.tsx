@@ -1,12 +1,14 @@
 import { createContext, ReactNode, useEffect, useReducer } from 'react'
 import { coffees } from '../products/products'
-import { updateCartAction } from '../reducers/actions'
+import { updateCartAction, removeFromCartAction } from '../reducers/actions'
 import { Coffee, Item, orderReducer } from '../reducers/reducer'
 
 export interface OrderContextType {
   coffees: Coffee[]
-  updateCart: (idProduct: string, quantity: number) => void
   cart: Item[]
+
+  updateCart: (idProduct: string, quantity: number) => void
+  removeFromCart: (id: string) => void
 }
 
 export interface OrderContextProviderProps {
@@ -39,6 +41,10 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
     dispatch(updateCartAction(idProduct, quantity))
   }
 
+  function removeFromCart(idProduct: string) {
+    dispatch(removeFromCartAction(idProduct))
+  }
+
   useEffect(() => {
     const stateJSON = JSON.stringify(orderState)
 
@@ -51,6 +57,7 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
         coffees,
         cart,
         updateCart,
+        removeFromCart,
         // adress,
 
         // updateCart,

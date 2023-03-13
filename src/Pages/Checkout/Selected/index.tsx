@@ -5,6 +5,15 @@ import { SelectedContainer, SelectedContainerMain } from './styles'
 
 export function Selected() {
   const { cart } = useContext(OrderContext)
+
+  // Fazendo a soma total do carrinho
+  const totalOrder = cart.reduce(
+    (acc, item) => acc + (item ? item.price * item.quantity : 0),
+    0,
+  )
+
+  const deliveryFee: any = 3.5
+
   return (
     <SelectedContainer>
       <h3>Cafés selecionados</h3>
@@ -13,13 +22,24 @@ export function Selected() {
           return (
             <div key={item.id}>
               <CoffeeCardSelected id={item.id}></CoffeeCardSelected>
-              <span>
-                {item.name} - {item.quantity}{' '}
-              </span>
               <hr />
             </div>
           )
         })}
+        <table>
+          <tbody>
+            <tr>
+              <td>Total de itens</td>
+              <td>R$ {totalOrder.toFixed(2)}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Total</th>
+              <th>R$ {(totalOrder + deliveryFee).toFixed(2)}</th>
+            </tr>
+          </tfoot>
+        </table>
       </SelectedContainerMain>
     </SelectedContainer>
   )

@@ -26,4 +26,30 @@ export const SelectedContainerMain = styled.main`
     margin: 2rem 0;
     border: 1px solid ${(props) => props.theme['base-button']};
   }
+
+  table {
+    width: 100%;
+    border-spacing: 1rem;
+
+    tbody {
+      font-size: 1.25rem;
+      color: ${(props) => props.theme['base-text']};
+    }
+
+    tfoot {
+      font-size: 1.5rem;
+      color: ${(props) => props.theme['base-subtitle']};
+    }
+
+    td,
+    th {
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
 `

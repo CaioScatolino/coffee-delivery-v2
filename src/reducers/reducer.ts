@@ -52,6 +52,17 @@ export function orderReducer(state: OrderState, action: any): any {
         }
       }
       break
+
+    case ActionTypes.REMOVE_FROM_CART: {
+      const itemsUpdated = state.cart.filter(
+        (item) => item.id !== action.payload.idProduct,
+      )
+      return {
+        ...state,
+        cart: itemsUpdated,
+      }
+    }
+
     default:
       return state
   }

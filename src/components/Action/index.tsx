@@ -1,7 +1,7 @@
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { Minus, Plus, ShoppingCart, Trash } from 'phosphor-react'
 import { useContext, useState } from 'react'
 import { OrderContext } from '../../contexts/OrderContext'
-import { ActionContainer, Add, Counter } from './styles'
+import { ActionContainer, Add, Counter, Remove } from './styles'
 
 interface CounterProps {
   id: string
@@ -9,7 +9,7 @@ interface CounterProps {
 }
 
 export function Action({ id, actionType }: CounterProps) {
-  const { cart, updateCart } = useContext(OrderContext)
+  const { cart, updateCart, removeFromCart } = useContext(OrderContext)
   const [quantity, setQuantity] = useState(0)
   const item = cart.find((item) => item.id === id)
 
@@ -54,6 +54,12 @@ export function Action({ id, actionType }: CounterProps) {
         <Add onClick={() => updateCart(id, quantity)}>
           <ShoppingCart size={22} weight="fill" />
         </Add>
+      )}
+      {actionType === 'remove' && (
+        <Remove onClick={() => removeFromCart(id)}>
+          <Trash size={20} />
+          <p>Remover</p>
+        </Remove>
       )}
     </ActionContainer>
   )

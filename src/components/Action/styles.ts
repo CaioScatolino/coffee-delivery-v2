@@ -23,6 +23,7 @@ export const Counter = styled.div`
   margin-right: 0.5rem;
   border-radius: 8px;
   transition: background-color 0.5s ease-in-out;
+  cursor: pointer;
 
   p {
     font-family: 'Roboto', sans-serif;
@@ -50,7 +51,8 @@ export const Add = styled.button`
   color: ${(props) => props.theme.background};
   border: none;
   border-radius: 8px;
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
 
   :hover {
     background-color: ${(props) => props.theme.purple};
@@ -69,8 +71,9 @@ export const Remove = styled.button`
   justify-content: left;
   gap: 0.2rem;
   padding-left: 0.3rem;
+  cursor: pointer;
 
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
   p {
     color: ${(props) => props.theme['base-subtitle']};

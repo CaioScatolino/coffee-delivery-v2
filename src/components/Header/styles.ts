@@ -58,6 +58,7 @@ export const LocationInput = styled.div`
     outline: none;
     background-color: ${(props) => props.theme['purple-light']};
     color: ${(props) => props.theme.purple};
+    cursor: pointer;
 
     &::-webkit-calendar-picker-indicator {
       display: none !important;
