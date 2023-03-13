@@ -10,6 +10,17 @@ export interface Coffee {
   price: number
 }
 
+export interface DeliveryInfo {
+  postCode: string
+  street: string
+  number: string
+  complement?: string
+  neighborhood: string
+  city: string
+  state: string
+  payment: string
+}
+
 export interface Item extends Coffee {
   quantity: number
 }
@@ -17,7 +28,7 @@ export interface Item extends Coffee {
 export interface OrderState {
   id: string
   cart: Item[]
-  // adress?: DeliveryInfo
+  adress?: DeliveryInfo
 }
 
 export function orderReducer(state: OrderState, action: any): any {
@@ -60,6 +71,13 @@ export function orderReducer(state: OrderState, action: any): any {
       return {
         ...state,
         cart: itemsUpdated,
+      }
+    }
+
+    case ActionTypes.CREATE_NEW_ADRESS: {
+      return {
+        ...state,
+        adress: action.payload.dataForm,
       }
     }
 

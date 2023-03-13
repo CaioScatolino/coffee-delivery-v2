@@ -1,7 +1,11 @@
 import { useContext } from 'react'
 import { OrderContext } from '../../../contexts/OrderContext'
 import { CoffeeCardSelected } from './Components/CoffeeCardSelected'
-import { SelectedContainer, SelectedContainerMain } from './styles'
+import {
+  PurchaseButton,
+  SelectedContainer,
+  SelectedContainerMain,
+} from './styles'
 
 export function Selected() {
   const { cart } = useContext(OrderContext)
@@ -32,6 +36,10 @@ export function Selected() {
               <td>Total de itens</td>
               <td>R$ {totalOrder.toFixed(2)}</td>
             </tr>
+            <tr>
+              <td>Entrega</td>
+              <td>R$ {deliveryFee.toFixed(2)}</td>
+            </tr>
           </tbody>
           <tfoot>
             <tr>
@@ -40,6 +48,9 @@ export function Selected() {
             </tr>
           </tfoot>
         </table>
+        <PurchaseButton type="submit" form="adressForm">
+          CONFIRMAR PEDIDO
+        </PurchaseButton>
       </SelectedContainerMain>
     </SelectedContainer>
   )

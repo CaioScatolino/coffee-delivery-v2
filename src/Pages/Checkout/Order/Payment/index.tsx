@@ -1,3 +1,13 @@
+import { CurrencyDollar } from 'phosphor-react'
+import { BasicHeader } from '../styles'
+import { PaymentContainer } from './style'
+
 export function Payment() {
-  return <h1>É o pagas</h1>
+  return (
+    <PaymentContainer>
+      <BasicHeader variantColor="purple">
+        <CurrencyDollar />
+      </BasicHeader>
+    </PaymentContainer>
+  )
 }

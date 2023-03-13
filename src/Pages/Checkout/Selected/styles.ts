@@ -54,3 +54,15 @@ export const SelectedContainerMain = styled.main`
     }
   }
 `
+export const PurchaseButton = styled.button`
+  margin: 1rem 0;
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border: 0;
+  background-color: ${(props) => props.theme.yellow};
+  color: ${(props) => props.theme.white};
+  font-weight: 700;
+  font-size: 0.875rem;
+  height: 3rem;
+  border-radius: 8px;
+`
