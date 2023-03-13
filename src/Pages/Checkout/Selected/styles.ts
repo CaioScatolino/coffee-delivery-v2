@@ -8,6 +8,7 @@ export const SelectedContainer = styled.div`
   h3 {
     color: ${(props) => props.theme['base-subtitle']};
     margin: 1rem 0;
+    font-family: 'Baloo 2';
   }
 `
 

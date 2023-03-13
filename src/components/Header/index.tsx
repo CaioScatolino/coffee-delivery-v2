@@ -11,7 +11,9 @@ export function Header() {
   return (
     <HeaderContainer>
       <span>
-        <img src={LogoCoffeeDelivery} alt="" />
+        <a href="/">
+          <img src={LogoCoffeeDelivery} alt="" />
+        </a>
       </span>
       <nav>
         <LocationInput>
